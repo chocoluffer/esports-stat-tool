@@ -8,6 +8,11 @@ class PlayersController < ApplicationController
 	end
 
 	def new
+		@player = Player.new
+	end
+
+	def edit
+		@player = Player.find(params[:id])
 	end
 
 	def create
@@ -15,8 +20,21 @@ class PlayersController < ApplicationController
 
 		@player = Player.new(player_params)
 
-		@player.save
-		redirect_to @player
+		if @player.save
+			redirect_to @player
+		else
+			render 'new'
+		end
+	end
+
+	def update
+		@player = Player.find(params[:id])
+
+		if @player.update(player_params)
+			redirect_to @player
+		else
+			render 'edit'
+		end
 	end
 
 	private
