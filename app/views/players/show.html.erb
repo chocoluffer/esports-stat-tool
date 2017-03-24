@@ -1,17 +1,14 @@
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
+<h2><%= @player.name %></h2>
  
 <p>
   <strong>Main Heros:</strong>
   <%= @player.mains %>
 </p>
-
+<hr>
 <h2>Comments</h2>
 <%= render @player.comments %>
 
-<h2>Player comment:</h2>
+<h3>Leave a comment:</h3>
 <%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_player_path(@player) %> | 

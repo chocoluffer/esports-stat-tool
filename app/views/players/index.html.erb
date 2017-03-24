@@ -1,11 +1,11 @@
-<h1>Listing players</h1>
+<h1>Player Roster</h1>
  <%= link_to 'New player', new_player_path %>
 
-<table>
+<table border="1 black solid">
   <tr>
-    <th>Name</th>
-    <th>Mains</th>
-    <th colspan="2"></th>
+    <th width="140px">Name</th>
+    <th width="300px">Mains</th>
+    <th colspan="3"></th>
   </tr>
  
   <% @players.each do |player| %>
