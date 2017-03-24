@@ -14,6 +14,9 @@
       <td><%= player.mains %></td>
       <td><%= link_to 'Show', player_path(player) %></td>
       <td><%= link_to 'Edit', edit_player_path(player) %></td>
+      <td><%= link_to 'Destroy', player_path(player),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

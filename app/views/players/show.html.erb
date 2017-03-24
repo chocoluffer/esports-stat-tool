@@ -8,5 +8,11 @@
   <%= @player.mains %>
 </p>
 
+<h2>Comments</h2>
+<%= render @player.comments %>
+
+<h2>Player comment:</h2>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_player_path(@player) %> | 
 <%= link_to 'Back', players_path %>

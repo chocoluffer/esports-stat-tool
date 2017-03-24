@@ -1,4 +1,7 @@
 class PlayersController < ApplicationController
+	http_basic_authenticate_with name: "dhh", password: "musux", except:
+	[:index, :show]
+
 	def index
 		@players = Player.all
 	end
@@ -35,6 +38,13 @@ class PlayersController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@player = Player.find(params[:id])
+		@player.destroy
+
+		redirect_to players_path
 	end
 
 	private
