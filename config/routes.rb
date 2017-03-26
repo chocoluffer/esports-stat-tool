@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'video_log/index'
+
+  # get 'welcome/index'
 
   resources :players do
   	resources :comments
   end
 
-  root 'welcome#index'
+  root 'video_log#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,2 @@
+module VideoLogHelper
+end
