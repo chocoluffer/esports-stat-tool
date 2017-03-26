@@ -1,0 +1,19 @@
+<h1>Video Log</h1>
+<%= link_to 'New video', new_video_path %>
+<button onclick="">Upload</button>
+
+<table border="1 black solid">
+	<tr>
+	  <th>Date</th>	
+	  <th>Title</th>
+	  <td colspan="2">
+	</tr>
+
+	<% @videos.each do |video| %>
+		<tr>
+		  <td><%= video.date %></td>
+		  <td><%= video.title %></td>
+		  <td><%= link_to 'View', video_path(video) %></td>
+		</tr>
+	<% end %>
+</table>
