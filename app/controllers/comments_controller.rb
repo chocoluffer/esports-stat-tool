@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	http_basic_authenticate_with name: "dhh", password: "musux", only: :destroy
+	http_basic_authenticate_with name: "admin", password: "musux", only: :destroy
 
 	def create
 		@player = Player.find(params[:player_id])
