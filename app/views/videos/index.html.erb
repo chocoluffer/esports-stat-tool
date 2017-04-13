@@ -1,10 +1,10 @@
 <h1>Video Log</h1>
 <%= link_to 'New video', new_video_path %>
-<button onclick="">Upload</button>
+<!-- <button onclick="">Upload</button> -->
 
 <table border="1 black solid">
 	<tr>
-	  <th>Date</th>	
+	  <th width="100px">Date</th>	
 	  <th>Title</th>
 	  <td colspan="2">
 	</tr>
@@ -14,6 +14,11 @@
 		  <td><%= video.date %></td>
 		  <td><%= video.title %></td>
 		  <td><%= link_to 'View', video_path(video) %></td>
+      	  <td><%= link_to 'Delete', video_path(video),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 	<% end %>
 </table>
+
+<%= link_to 'Back', welcome_index_path %>
